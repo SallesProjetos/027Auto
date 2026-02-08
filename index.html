@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>027AUTO | Acelere sua venda de carros</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradiente-logo" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#00d4ff"/>
+                            <stop offset="100%" style="stop-color:#ff00a5"/>
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#gradiente-logo)" d="M15 35 L15 38 L25 38 L28 35 L32 35 L35 30 L45 30 L48 25 L55 25 L58 22 L75 22 L78 28 L85 28 L88 32 L95 32 L98 35 L108 35 L108 30 L100 28 L95 22 L88 22 L85 18 L75 15 L55 15 L48 18 L45 25 L35 25 L32 30 L25 30 L18 35 Z"/>
+                    <path fill="url(#gradiente-logo)" d="M25 38 L25 40 L30 40 L30 38 Z M85 38 L85 40 L90 40 L90 38 Z"/>
+                    <path fill="url(#gradiente-logo)" d="M105 32 L108 28 L110 28 L113 32 L110 34 Z"/>
+                </svg>
+                <span class="logo-text">027<span class="logo-auto">AUTO</span></span>
+            </a>
+            <nav class="nav">
+                <a href="index.html">Início</a>
+                <a href="carros.html">Carros</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="container hero-content">
+                <h1>Seu carro seminovo está aqui</h1>
+                <p>Seminovos Localiza com laudo cautelar e preços abaixo da FIPE. Encontre em minutos.</p>
+                <div class="hero-buttons">
+                    <a href="carros.html" class="btn btn-primary">Ver catálogo</a>
+                    <a href="#contato" class="btn btn-secondary">Contato</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="diferenciais">
+            <div class="container">
+                <h2>Nossos diferenciais</h2>
+                <div class="diferenciais-grid">
+                    <div class="diferencial-card">
+                        <div class="diferencial-icon">✓</div>
+                        <h3>Laudo cautelar</h3>
+                        <p>Veículos com documentação verificada e garantia de procedência.</p>
+                    </div>
+                    <div class="diferencial-card">
+                        <div class="diferencial-icon">✓</div>
+                        <h3>Quilometragem real</h3>
+                        <p>Transparência total na informação dos veículos.</p>
+                    </div>
+                    <div class="diferencial-card">
+                        <div class="diferencial-icon">✓</div>
+                        <h3>Preços abaixo da FIPE</h3>
+                        <p>Melhores condições para sua revenda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalogo-preview">
+            <div class="container">
+                <h2>Destaques</h2>
+                <div id="destaques-grid" class="carros-grid"></div>
+                <div class="text-center">
+                    <a href="carros.html" class="btn btn-outline">Ver mais carros</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="contato">
+            <div class="container">
+                <h2>Fale conosco</h2>
+                <p>Dúvidas? Quer fazer uma proposta? Estamos no WhatsApp.</p>
+                <a href="https://wa.me/5527998880682" target="_blank" rel="noopener" class="btn btn-whatsapp">WhatsApp (27) 99888-0682</a>
+                <form class="form-contato" onsubmit="return false;">
+                    <input type="text" placeholder="Nome" required>
+                    <input type="email" placeholder="E-mail" required>
+                    <input type="tel" placeholder="Telefone">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo-footer">
+                <span class="logo-text">027<span class="logo-auto">AUTO</span></span>
+            </div>
+            <p>Proposta comercial — Demonstração para cliente</p>
+        </div>
+    </footer>
+    <a href="https://wa.me/5527998880682" target="_blank" rel="noopener" class="floating-whatsapp" title="Fale conosco">💬</a>
+    <script src="dados.js"></script>
+    <script>
+        const destaque = document.getElementById('destaques-grid');
+        const veiculos = DADOS_027AUTO.veiculos.slice(0, 3);
+        destaque.innerHTML = veiculos.map(v => `
+            <a href="detalhe.html?id=${v.id}" class="carro-card">
+                <div class="carro-imagem"><img src="${v.imagem}" alt="${v.marca} ${v.modelo}" loading="lazy"></div>
+                <span class="carro-label">${v.label || ''}</span>
+                <h3>${v.marca} ${v.modelo}</h3>
+                <p class="carro-preco">${v.preco && v.preco > 0 ? 'R$ ' + v.preco.toLocaleString('pt-BR') : 'Consulte-nos'}</p>
+            </a>
+        `).join('');
+    </script>
+</body>
+</html>

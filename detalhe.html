@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>027AUTO | Detalhe do Veículo</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-detalhe">
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradiente-logo" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#00d4ff"/>
+                            <stop offset="100%" style="stop-color:#ff00a5"/>
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#gradiente-logo)" d="M15 35 L15 38 L25 38 L28 35 L32 35 L35 30 L45 30 L48 25 L55 25 L58 22 L75 22 L78 28 L85 28 L88 32 L95 32 L98 35 L108 35 L108 30 L100 28 L95 22 L88 22 L85 18 L75 15 L55 15 L48 18 L45 25 L35 25 L32 30 L25 30 L18 35 Z"/>
+                    <path fill="url(#gradiente-logo)" d="M25 38 L25 40 L30 40 L30 38 Z M85 38 L85 40 L90 40 L90 38 Z"/>
+                    <path fill="url(#gradiente-logo)" d="M105 32 L108 28 L110 28 L113 32 L110 34 Z"/>
+                </svg>
+                <span class="logo-text">027<span class="logo-auto">AUTO</span></span>
+            </a>
+            <nav class="nav">
+                <a href="index.html">Início</a>
+                <a href="carros.html">Carros</a>
+                <a href="index.html#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="detalhe-container">
+        <div class="container">
+            <a href="carros.html" class="voltar-link">← Voltar para catálogo</a>
+
+            <div id="detalhe-veiculo" class="detalhe-veiculo">
+                <!-- Conteúdo carregado via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo-footer">
+                <span class="logo-text">027<span class="logo-auto">AUTO</span></span>
+            </div>
+            <p>Proposta comercial — Demonstração para cliente</p>
+        </div>
+    </footer>
+    <a href="https://wa.me/5527998880682" target="_blank" rel="noopener" class="floating-whatsapp" title="Fale conosco">💬</a>
+    <script src="dados.js"></script>
+    <script>
+        function formatarPreco(valor) { return (valor && valor > 0) ? "R$ " + valor.toLocaleString("pt-BR") : "Consulte-nos"; }
+
+        function carregarDetalhe() {
+            const params = new URLSearchParams(window.location.search);
+            const id = parseInt(params.get("id")) || 1;
+            const carro = DADOS_027AUTO.veiculos.find(v => v.id === id) || DADOS_027AUTO.veiculos[0];
+            const anoExib = carro.anoMod ? `${carro.anoFab}/${carro.anoMod}` : carro.anoFab;
+            const imagens = carro.imagens || [carro.imagem, carro.imagem, carro.imagem];
+
+            const html = `
+                <div class="detalhe-grid">
+                    <div class="detalhe-galeria">
+                        <div class="detalhe-imagem-principal">
+                            <img src="${carro.imagem}" alt="${carro.marca} ${carro.modelo}">
+                            <span class="detalhe-label">${carro.label || ''}</span>
+                        </div>
+                        <div class="detalhe-miniaturas">
+                            ${imagens.map((img, i) => `<div class="miniatura ${i === 0 ? 'ativa' : ''}" onclick="document.querySelector('.detalhe-imagem-principal img').src='${img}'"><img src="${img}" alt="Foto ${i+1}"></div>`).join('')}
+                        </div>
+                    </div>
+                    <div class="detalhe-info">
+                        <h1>${carro.marca} ${carro.modelo}</h1>
+                        <p class="detalhe-versao">${carro.versao || ''}</p>
+                        <p class="detalhe-preco">${formatarPreco(carro.preco)}</p>
+                        <p class="detalhe-ano-km">${anoExib} • ${carro.km.toLocaleString("pt-BR")} km</p>
+
+                        <div class="detalhe-specs">
+                            <div class="spec-item">
+                                <span class="spec-label">Cor</span>
+                                <span class="spec-valor">${carro.cor}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Combustível</span>
+                                <span class="spec-valor">${carro.combustivel}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Câmbio</span>
+                                <span class="spec-valor">${carro.cambio}</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Localização</span>
+                                <span class="spec-valor">${carro.cidade} - ${carro.estado}</span>
+                            </div>
+                        </div>
+
+                        <div class="detalhe-diferenciais">
+                            <span class="badge">✓ Laudo cautelar</span>
+                            <span class="badge">✓ Quilometragem real</span>
+                            <span class="badge">✓ Preço abaixo da FIPE</span>
+                        </div>
+
+                        <p class="detalhe-descricao">${carro.descricao}</p>
+
+                        <div class="detalhe-itens">
+                            <h3>Itens de série</h3>
+                            <ul>
+                                ${(carro.itens || []).map(item => `<li>${item}</li>`).join("")}
+                            </ul>
+                        </div>
+
+                        <a href="index.html#contato" class="btn btn-primary btn-block">Ver mais informações</a>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById("detalhe-veiculo").innerHTML = html;
+            document.title = `${carro.marca} ${carro.modelo} | 027AUTO`;
+        }
+
+        carregarDetalhe();
+    </script>
+</body>
+</html>

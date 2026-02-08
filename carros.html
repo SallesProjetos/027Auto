@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>027AUTO | Catálogo de Carros</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="pagina-carros">
+    <header class="header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradiente-logo" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#00d4ff"/>
+                            <stop offset="100%" style="stop-color:#ff00a5"/>
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#gradiente-logo)" d="M15 35 L15 38 L25 38 L28 35 L32 35 L35 30 L45 30 L48 25 L55 25 L58 22 L75 22 L78 28 L85 28 L88 32 L95 32 L98 35 L108 35 L108 30 L100 28 L95 22 L88 22 L85 18 L75 15 L55 15 L48 18 L45 25 L35 25 L32 30 L25 30 L18 35 Z"/>
+                    <path fill="url(#gradiente-logo)" d="M25 38 L25 40 L30 40 L30 38 Z M85 38 L85 40 L90 40 L90 38 Z"/>
+                    <path fill="url(#gradiente-logo)" d="M105 32 L108 28 L110 28 L113 32 L110 34 Z"/>
+                </svg>
+                <span class="logo-text">027<span class="logo-auto">AUTO</span></span>
+            </a>
+            <nav class="nav">
+                <a href="index.html">Início</a>
+                <a href="carros.html">Carros</a>
+                <a href="index.html#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pagina-catalogo">
+        <div class="container">
+            <h1 id="titulo-catalogo" class="titulo-catalogo">Veículos para comprar em todo Brasil</h1>
+            
+            <div class="catalogo-layout">
+                <aside class="filtros-sidebar">
+                    <div class="filtros-header">
+                        <h2>Filtros</h2>
+                        <div class="filtros-status">
+                            <span id="filtros-aplicados" class="filtros-aplicados">0 Aplicados</span>
+                            <a href="#" id="limpar-filtros" class="limpar-filtros">Limpar todos</a>
+                        </div>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <button class="filtro-titulo" type="button">
+                            Localização
+                            <span class="filtro-seta">▼</span>
+                        </button>
+                        <div class="filtro-conteudo aberto">
+                            <p class="filtro-instrucao">Use os filtros para melhorar sua busca.</p>
+                            <input type="text" id="busca-cidade" placeholder="Digite para buscar cidade ou estado..." class="filtro-busca" autocomplete="off">
+                            <div id="lista-cidades" class="lista-cidades"></div>
+                            <div id="cidades-selecionadas" class="cidades-selecionadas"></div>
+                        </div>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <button class="filtro-titulo" type="button">
+                            Marca e Modelo
+                            <span class="filtro-seta">▶</span>
+                        </button>
+                        <div class="filtro-conteudo">
+                            <select id="filtro-marca">
+                                <option value="">Selecione a marca</option>
+                            </select>
+                            <select id="filtro-modelo">
+                                <option value="">Selecione o modelo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <button class="filtro-titulo" type="button">
+                            Quilometragem
+                            <span class="filtro-seta">▶</span>
+                        </button>
+                        <div class="filtro-conteudo">
+                            <select id="filtro-km">
+                                <option value="">Todas</option>
+                                <option value="10000">Até 10.000 km</option>
+                                <option value="30000">10.000 - 30.000 km</option>
+                                <option value="50000">30.000 - 50.000 km</option>
+                                <option value="999999">Acima de 50.000 km</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <button class="filtro-titulo" type="button">
+                            Ano Fabr./Mod.
+                            <span class="filtro-seta">▶</span>
+                        </button>
+                        <div class="filtro-conteudo">
+                            <select id="filtro-ano">
+                                <option value="">Todos</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <button class="filtro-titulo" type="button">
+                            Câmbio
+                            <span class="filtro-seta">▶</span>
+                        </button>
+                        <div class="filtro-conteudo">
+                            <label><input type="checkbox" id="filtro-cambio-manual"> Manual</label>
+                            <label><input type="checkbox" id="filtro-cambio-auto"> Automático</label>
+                        </div>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <button class="filtro-titulo" type="button">
+                            Motor
+                            <span class="filtro-seta">▶</span>
+                        </button>
+                        <div class="filtro-conteudo">
+                            <select id="filtro-motor">
+                                <option value="">Todos</option>
+                                <option value="1.0">1.0</option>
+                                <option value="1.2">1.2</option>
+                                <option value="1.4">1.4</option>
+                                <option value="1.6">1.6</option>
+                                <option value="1.8">1.8</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <button class="filtro-titulo" type="button">
+                            Combustível
+                            <span class="filtro-seta">▶</span>
+                        </button>
+                        <div class="filtro-conteudo">
+                            <label><input type="checkbox" id="filtro-flex"> Flex</label>
+                            <label><input type="checkbox" id="filtro-gasolina"> Gasolina</label>
+                            <label><input type="checkbox" id="filtro-diesel"> Diesel</label>
+                            <label><input type="checkbox" id="filtro-etanol"> Etanol</label>
+                        </div>
+                    </div>
+
+                    <div class="filtro-grupo">
+                        <button class="filtro-titulo" type="button">
+                            Cor
+                            <span class="filtro-seta">▶</span>
+                        </button>
+                        <div class="filtro-conteudo">
+                            <select id="filtro-cor">
+                                <option value="">Todas</option>
+                                <option value="Branco">Branco</option>
+                                <option value="Preto">Preto</option>
+                                <option value="Prata">Prata</option>
+                                <option value="Vermelho">Vermelho</option>
+                                <option value="Azul">Azul</option>
+                                <option value="Cinza">Cinza</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <section class="resultados-area">
+                    <div class="resultados-header">
+                        <span id="resultados-count" class="resultados-count">0 veículos</span>
+                        <select id="ordenacao" class="ordenacao">
+                            <option value="km-asc">Menor Km</option>
+                            <option value="km-desc">Maior Km</option>
+                            <option value="preco-asc">Menor preço</option>
+                            <option value="preco-desc">Maior preço</option>
+                            <option value="ano-desc">Mais recentes</option>
+                        </select>
+                    </div>
+
+                <div id="carros-grid" class="carros-grid"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="logo-footer">
+                <span class="logo-text">027<span class="logo-auto">AUTO</span></span>
+            </div>
+            <p>Proposta comercial — Demonstração para cliente</p>
+        </div>
+    </footer>
+    <a href="https://wa.me/5527998880682" target="_blank" rel="noopener" class="floating-whatsapp" title="Fale conosco">💬</a>
+    <script src="dados.js"></script>
+    <script>
+        if (typeof DADOS_027AUTO === 'undefined') {
+            document.getElementById('carros-grid').innerHTML = '<p class="nenhum-resultado">Erro ao carregar dados. Execute <code>node servidor.js</code> e acesse <a href="http://localhost:8000/carros.html">http://localhost:8000/carros.html</a></p>';
+        } else {
+        const { veiculos, marcas, cidades } = DADOS_027AUTO;
+        let cidadesSelecionadas = []; // Mostrar todos por padrão (todo Brasil)
+
+        function formatarPreco(v) { return (v && v > 0) ? 'R$ ' + v.toLocaleString('pt-BR') : 'Consulte-nos'; }
+        function formatarKm(v) { return v.toLocaleString('pt-BR') + ' km'; }
+
+        function cidadeLabel(c) { return c.nome.toUpperCase() + ' - ' + c.estado; }
+
+        function filtrarCidadesPorBusca(termo) {
+            const t = (termo || '').trim().toLowerCase();
+            if (!t) return cidades;
+            return cidades.filter(c =>
+                c.nome.toLowerCase().includes(t) || c.estado.toLowerCase().includes(t)
+            );
+        }
+
+        function atualizarListaCidades() {
+            const busca = document.getElementById('busca-cidade');
+            const lista = document.getElementById('lista-cidades');
+            const termo = busca?.value || '';
+            const filtradas = filtrarCidadesPorBusca(termo);
+            const jaSelecionadas = cidadesSelecionadas.map(c => c.id);
+
+            if (filtradas.length === 0) {
+                lista.innerHTML = '<div class="lista-cidades-vazio">Nenhuma cidade encontrada</div>';
+            } else {
+                lista.innerHTML = filtradas.map(c => {
+                    const selecionada = jaSelecionadas.includes(c.id);
+                    return `<div class="lista-cidades-item" data-id="${c.id}" data-nome="${c.nome}" data-estado="${c.estado}">${cidadeLabel(c)}${selecionada ? ' ✓' : ''}</div>`;
+                }).join('');
+            }
+
+            lista.querySelectorAll('.lista-cidades-item').forEach(el => {
+                el.addEventListener('click', () => {
+                    const id = parseInt(el.dataset.id);
+                    const cidade = cidades.find(c => c.id === id);
+                    if (!cidade) return;
+                    const idx = cidadesSelecionadas.findIndex(c => c.id === id);
+                    if (idx >= 0) {
+                        cidadesSelecionadas.splice(idx, 1);
+                    } else {
+                        cidadesSelecionadas.push(cidade);
+                    }
+                    atualizarCidadesSelecionadas();
+                    atualizarListaCidades();
+                    aplicarFiltros();
+                });
+            });
+        }
+
+        function atualizarCidadesSelecionadas() {
+            const container = document.getElementById('cidades-selecionadas');
+            container.innerHTML = cidadesSelecionadas.map(c => `
+                <div class="cidade-selecionada">
+                    <span>${cidadeLabel(c)}</span>
+                    <button type="button" class="filtro-remover" data-id="${c.id}" title="Remover">×</button>
+                </div>
+            `).join('');
+
+            container.querySelectorAll('.filtro-remover').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = parseInt(btn.dataset.id);
+                    cidadesSelecionadas = cidadesSelecionadas.filter(c => c.id !== id);
+                    atualizarCidadesSelecionadas();
+                    atualizarListaCidades();
+                    aplicarFiltros();
+                });
+            });
+        }
+
+        function atualizarFiltrosStatus() {
+            const count = cidadesSelecionadas.length +
+                (document.getElementById('filtro-marca')?.value ? 1 : 0) +
+                (document.getElementById('filtro-modelo')?.value ? 1 : 0);
+            const el = document.getElementById('filtros-aplicados');
+            if (el) el.textContent = count + ' Aplicado' + (count !== 1 ? 's' : '');
+        }
+
+        function atualizarTitulo() {
+            const titulo = document.getElementById('titulo-catalogo');
+            if (!titulo) return;
+            if (cidadesSelecionadas.length === 0) {
+                titulo.textContent = 'Veículos para comprar em todo Brasil';
+            } else if (cidadesSelecionadas.length === 1) {
+                titulo.textContent = 'Veículos para comprar em ' + cidadeLabel(cidadesSelecionadas[0]);
+            } else {
+                titulo.textContent = 'Veículos para comprar em ' + cidadesSelecionadas.length + ' cidades';
+            }
+        }
+
+        function renderizarCarros(lista) {
+            const grid = document.getElementById('carros-grid');
+            const countEl = document.getElementById('resultados-count');
+            if (countEl) countEl.textContent = lista.length + ' veículos';
+            if (grid) {
+                grid.innerHTML = lista.length ? lista.map(v => `
+                    <a href="detalhe.html?id=${v.id}" class="carro-card">
+                        <div class="carro-imagem"><img src="${v.imagem}" alt="${v.marca} ${v.modelo}" loading="lazy"></div>
+                        <span class="carro-label">${v.label || ''}</span>
+                        <h3>${v.marca} ${v.modelo}</h3>
+                        <p class="carro-preco">${formatarPreco(v.preco)}</p>
+                        <p class="carro-info">${v.anoFab}/${v.anoMod || v.anoFab} • ${formatarKm(v.km)}</p>
+                    </a>
+                `).join('') : '<p class="nenhum-resultado">Nenhum veículo encontrado com os filtros selecionados.</p>';
+            }
+        }
+
+        function ordenarLista(lista) {
+            const ord = document.getElementById('ordenacao')?.value || 'km-asc';
+            const arr = [...lista];
+            if (ord === 'km-asc') arr.sort((a, b) => a.km - b.km);
+            else if (ord === 'km-desc') arr.sort((a, b) => b.km - a.km);
+            else if (ord === 'preco-asc') arr.sort((a, b) => (a.preco || 0) - (b.preco || 0));
+            else if (ord === 'preco-desc') arr.sort((a, b) => (b.preco || 0) - (a.preco || 0));
+            else if (ord === 'ano-desc') arr.sort((a, b) => (b.anoFab || 0) - (a.anoFab || 0));
+            return arr;
+        }
+
+        function aplicarFiltros() {
+            const marca = document.getElementById('filtro-marca')?.value?.toLowerCase();
+            const modelo = document.getElementById('filtro-modelo')?.value?.toLowerCase();
+            let lista = [...veiculos];
+
+            if (cidadesSelecionadas.length > 0) {
+                const nomesCidades = cidadesSelecionadas.map(c => c.nome.toUpperCase());
+                lista = lista.filter(v => nomesCidades.includes(v.cidade.toUpperCase()));
+            }
+            if (marca) lista = lista.filter(v => v.marca.toLowerCase().includes(marca));
+            if (modelo) lista = lista.filter(v => v.modelo.toLowerCase().includes(modelo));
+
+            lista = ordenarLista(lista);
+            atualizarFiltrosStatus();
+            atualizarTitulo();
+            renderizarCarros(lista);
+        }
+
+        document.getElementById('busca-cidade')?.addEventListener('input', atualizarListaCidades);
+        document.getElementById('busca-cidade')?.addEventListener('focus', () => { atualizarListaCidades(); });
+        document.getElementById('limpar-filtros')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            cidadesSelecionadas = [];
+            const buscaCidade = document.getElementById('busca-cidade');
+            if (buscaCidade) buscaCidade.value = '';
+            atualizarCidadesSelecionadas();
+            atualizarListaCidades();
+
+            const sm = document.getElementById('filtro-marca');
+            const smod = document.getElementById('filtro-modelo');
+            if (sm) sm.value = '';
+            if (smod) { smod.value = ''; smod.innerHTML = '<option value="">Selecione o modelo</option>'; }
+
+            const km = document.getElementById('filtro-km');
+            const ano = document.getElementById('filtro-ano');
+            const motor = document.getElementById('filtro-motor');
+            const cor = document.getElementById('filtro-cor');
+            if (km) km.value = '';
+            if (ano) ano.value = '';
+            if (motor) motor.value = '';
+            if (cor) cor.value = '';
+
+            const cambioManual = document.getElementById('filtro-cambio-manual');
+            const cambioAuto = document.getElementById('filtro-cambio-auto');
+            const flex = document.getElementById('filtro-flex');
+            const gasolina = document.getElementById('filtro-gasolina');
+            const diesel = document.getElementById('filtro-diesel');
+            const etanol = document.getElementById('filtro-etanol');
+            if (cambioManual) cambioManual.checked = false;
+            if (cambioAuto) cambioAuto.checked = false;
+            if (flex) flex.checked = false;
+            if (gasolina) gasolina.checked = false;
+            if (diesel) diesel.checked = false;
+            if (etanol) etanol.checked = false;
+
+            aplicarFiltros();
+        });
+
+        const selMarca = document.getElementById('filtro-marca');
+        const selModelo = document.getElementById('filtro-modelo');
+        if (selMarca) {
+            marcas.forEach(m => { selMarca.innerHTML += `<option value="${m.nome}">${m.nome}</option>`; });
+            selMarca.addEventListener('change', function() {
+                const m = marcas.find(x => x.nome === this.value);
+                selModelo.innerHTML = '<option value="">Selecione o modelo</option>';
+                if (m) m.modelos.forEach(mod => { selModelo.innerHTML += `<option value="${mod}">${mod}</option>`; });
+                aplicarFiltros();
+            });
+        }
+        if (selModelo) selModelo.addEventListener('change', aplicarFiltros);
+        document.getElementById('ordenacao')?.addEventListener('change', aplicarFiltros);
+
+        atualizarListaCidades();
+        aplicarFiltros();
+
+        document.querySelectorAll('.filtro-titulo').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const grupo = this.closest('.filtro-grupo');
+                const conteudo = grupo.querySelector('.filtro-conteudo');
+                const seta = this.querySelector('.filtro-seta');
+                const aberto = conteudo.classList.contains('aberto');
+                conteudo.classList.toggle('aberto', !aberto);
+                seta.textContent = aberto ? '▶' : '▼';
+            });
+        });
+        }
+    </script>
+</body>
+</html>
