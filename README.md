@@ -7,8 +7,8 @@ Projeto em HTML estático para apresentação da proposta de portal de venda de 
 - **index.html** — Página principal com Hero, Diferenciais, Catálogo em destaque, Como Funciona e Contato
 - **carros.html** — Página de catálogo com filtros laterais e listagem de veículos
 - **detalhe.html** — Página de detalhes do veículo (ao clicar no card)
-- **dados.js** — Catálogo de veículos (atualizado via script da API Localiza)
-- **atualizar-veiculos-localiza.js** — Script para buscar veículos da API Localiza (Serra - ES) e atualizar dados.js. Execute: `node atualizar-veiculos-localiza.js`
+- **dados.js** — Catálogo de veículos (atualizado via script)
+- **atualizar-veiculos-localiza.js** — Script para buscar veículos da API e atualizar dados.js. Execute: `node atualizar-veiculos-localiza.js`
 - **estilos.css** — Estilos com identidade visual 027AUTO (gradiente azul ciano → rosa)
 
 ## Como visualizar
@@ -23,4 +23,4 @@ Projeto em HTML estático para apresentação da proposta de portal de venda de 
 
 - Gradiente: azul ciano (#00d4ff) → rosa (#ff00a5)
 - Fundo escuro
-- Layout inspirado no Portal do Lojista Localiza
+- Layout moderno e responsivo

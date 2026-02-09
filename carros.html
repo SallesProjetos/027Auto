@@ -37,7 +37,12 @@
 
     <main class="pagina-catalogo">
         <div class="container">
-            <h1 id="titulo-catalogo" class="titulo-catalogo">Veículos para comprar em todo Brasil</h1>
+            <h1 id="titulo-catalogo" class="titulo-catalogo">Veículos para comprar no Espírito Santo</h1>
+            
+            <div class="busca-principal">
+                <span class="busca-icone">🔍</span>
+                <input type="text" id="busca-marca-modelo-placa" placeholder="Marca, modelo ou placa" class="busca-input" autocomplete="off">
+            </div>
             
             <div class="catalogo-layout">
                 <aside class="filtros-sidebar">
@@ -51,12 +56,12 @@
 
                     <div class="filtro-grupo">
                         <button class="filtro-titulo" type="button">
-                            Localização
+                            Localização (ES)
                             <span class="filtro-seta">▼</span>
                         </button>
                         <div class="filtro-conteudo aberto">
-                            <p class="filtro-instrucao">Use os filtros para melhorar sua busca.</p>
-                            <input type="text" id="busca-cidade" placeholder="Digite para buscar cidade ou estado..." class="filtro-busca" autocomplete="off">
+                            <p class="filtro-instrucao">Cidades do Espírito Santo.</p>
+                            <input type="text" id="busca-cidade" placeholder="Digite para buscar cidade..." class="filtro-busca" autocomplete="off">
                             <div id="lista-cidades" class="lista-cidades"></div>
                             <div id="cidades-selecionadas" class="cidades-selecionadas"></div>
                         </div>
@@ -197,18 +202,77 @@
         </div>
     </footer>
     <a href="https://wa.me/5527998880682" target="_blank" rel="noopener" class="floating-whatsapp" title="Fale conosco">💬</a>
-    <script src="dados.js"></script>
     <script>
-        if (typeof DADOS_027AUTO === 'undefined') {
-            document.getElementById('carros-grid').innerHTML = '<p class="nenhum-resultado">Erro ao carregar dados. Execute <code>node servidor.js</code> e acesse <a href="http://localhost:8000/carros.html">http://localhost:8000/carros.html</a></p>';
-        } else {
-        const { veiculos, marcas, cidades } = DADOS_027AUTO;
-        let cidadesSelecionadas = []; // Mostrar todos por padrão (todo Brasil)
+        const API_URL = '/api/veiculos';
 
+        const MARCAS_IDS = { FORD: 1, VOLKSWAGEN: 2, FIAT: 3, JEEP: 4, RENAULT: 5, CITROEN: 6, CHEVROLET: 7, TOYOTA: 8, HYUNDAI: 10, PEUGEOT: 11 };
+
+        function mapApiToDisplay(v) {
+            const store = v.store || {};
+            return {
+                id: v.id,
+                slug: v.slug || '',
+                brandId: v.brandId,
+                placa: (v.plate || '').toUpperCase(),
+                marca: (v.brand || '').toUpperCase(),
+                modelo: v.modelFamilyDescription || v.model || '',
+                versao: v.model || '',
+                anoFab: v.manufactureYear || v.modelYear,
+                anoMod: v.modelYear,
+                km: v.odometer || 0,
+                preco: v.priceFor || v.priceFrom || 0,
+                imagem: v.photoUrl || '',
+                cidade: (store.city || '').toUpperCase(),
+                estado: store.state || '',
+                label: v.category || '',
+                cambio: (v.transmission || '').toLowerCase().includes('automatico') ? 'Automático' : 'Mecânico',
+                combustivel: v.fuel || '',
+                cor: v.colorFamily || v.color || ''
+            };
+        }
+
+        let veiculos = [];
+        let cidades = [];
+        let marcas = [];
+        let cidadesSelecionadas = [];
+
+        function carregarDaApi(marcaId) {
+            const grid = document.getElementById('carros-grid');
+            grid.innerHTML = '<p class="nenhum-resultado">Carregando veículos...</p>';
+            let url = API_URL + '?pagina=1';
+            if (marcaId) url += '&marcas=' + marcaId;
+            fetch(url)
+                .then(r => {
+                    if (!r.ok) throw new Error('API ' + r.status);
+                    return r.json();
+                })
+                .then(data => {
+                    const raw = data.vehicles || [];
+                    veiculos = raw.map(mapApiToDisplay).filter(v => (v.estado || '').toUpperCase() === 'ES');
+                    cidades = [...new Map(veiculos.filter(v => v.cidade && (v.estado || '').toUpperCase() === 'ES').map(v => [v.cidade, { id: v.cidade, nome: v.cidade, estado: 'ES' }])).values()].sort((a, b) => a.nome.localeCompare(b.nome));
+                    const marcasSet = {};
+                    veiculos.forEach(v => {
+                        if (!v.marca) return;
+                        if (!marcasSet[v.marca]) marcasSet[v.marca] = { id: v.brandId, modelos: new Set() };
+                        if (v.modelo) marcasSet[v.marca].modelos.add(v.modelo);
+                    });
+                    marcas = Object.entries(marcasSet).map(([nome, data]) => ({ nome, id: data.id, modelos: [...data.modelos].sort() }));
+                    Object.entries(MARCAS_IDS).forEach(([nome, id]) => {
+                        if (!marcas.find(m => m.nome === nome)) marcas.push({ nome, id, modelos: [] });
+                    });
+                    marcas.sort((a, b) => a.nome.localeCompare(b.nome));
+                    iniciarFiltros();
+                })
+                .catch(() => {
+                    grid.innerHTML = '<p class="nenhum-resultado">Erro ao carregar. Execute <code>node servidor.js</code> e acesse <a href="http://localhost:8000/carros.html">http://localhost:8000/carros.html</a></p>';
+                });
+        }
+
+        function iniciarFiltros() {
         function formatarPreco(v) { return (v && v > 0) ? 'R$ ' + v.toLocaleString('pt-BR') : 'Consulte-nos'; }
         function formatarKm(v) { return v.toLocaleString('pt-BR') + ' km'; }
 
-        function cidadeLabel(c) { return c.nome.toUpperCase() + ' - ' + c.estado; }
+        function cidadeLabel(c) { return (c.nome || '') + ' - ' + (c.estado || ''); }
 
         function filtrarCidadesPorBusca(termo) {
             const t = (termo || '').trim().toLowerCase();
@@ -236,7 +300,7 @@
 
             lista.querySelectorAll('.lista-cidades-item').forEach(el => {
                 el.addEventListener('click', () => {
-                    const id = parseInt(el.dataset.id);
+                    const id = el.dataset.id;
                     const cidade = cidades.find(c => c.id === id);
                     if (!cidade) return;
                     const idx = cidadesSelecionadas.findIndex(c => c.id === id);
@@ -263,7 +327,7 @@
 
             container.querySelectorAll('.filtro-remover').forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const id = parseInt(btn.dataset.id);
+                    const id = btn.dataset.id;
                     cidadesSelecionadas = cidadesSelecionadas.filter(c => c.id !== id);
                     atualizarCidadesSelecionadas();
                     atualizarListaCidades();
@@ -273,9 +337,11 @@
         }
 
         function atualizarFiltrosStatus() {
+            const busca = (document.getElementById('busca-marca-modelo-placa')?.value || '').trim();
             const count = cidadesSelecionadas.length +
                 (document.getElementById('filtro-marca')?.value ? 1 : 0) +
-                (document.getElementById('filtro-modelo')?.value ? 1 : 0);
+                (document.getElementById('filtro-modelo')?.value ? 1 : 0) +
+                (busca ? 1 : 0);
             const el = document.getElementById('filtros-aplicados');
             if (el) el.textContent = count + ' Aplicado' + (count !== 1 ? 's' : '');
         }
@@ -284,11 +350,11 @@
             const titulo = document.getElementById('titulo-catalogo');
             if (!titulo) return;
             if (cidadesSelecionadas.length === 0) {
-                titulo.textContent = 'Veículos para comprar em todo Brasil';
+                titulo.textContent = 'Veículos para comprar no Espírito Santo';
             } else if (cidadesSelecionadas.length === 1) {
                 titulo.textContent = 'Veículos para comprar em ' + cidadeLabel(cidadesSelecionadas[0]);
             } else {
-                titulo.textContent = 'Veículos para comprar em ' + cidadesSelecionadas.length + ' cidades';
+                titulo.textContent = 'Veículos para comprar em ' + cidadesSelecionadas.length + ' cidades (ES)';
             }
         }
 
@@ -296,9 +362,10 @@
             const grid = document.getElementById('carros-grid');
             const countEl = document.getElementById('resultados-count');
             if (countEl) countEl.textContent = lista.length + ' veículos';
+            window._listaVeiculos = lista;
             if (grid) {
                 grid.innerHTML = lista.length ? lista.map(v => `
-                    <a href="detalhe.html?id=${v.id}" class="carro-card">
+                    <a href="detalhe.html" class="carro-card" data-id="${v.id}">
                         <div class="carro-imagem"><img src="${v.imagem}" alt="${v.marca} ${v.modelo}" loading="lazy"></div>
                         <span class="carro-label">${v.label || ''}</span>
                         <h3>${v.marca} ${v.modelo}</h3>
@@ -306,6 +373,17 @@
                         <p class="carro-info">${v.anoFab}/${v.anoMod || v.anoFab} • ${formatarKm(v.km)}</p>
                     </a>
                 `).join('') : '<p class="nenhum-resultado">Nenhum veículo encontrado com os filtros selecionados.</p>';
+                grid.querySelectorAll('.carro-card').forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const id = parseInt(card.dataset.id);
+                        const v = (window._listaVeiculos || []).find(x => x.id === id);
+                        if (v) {
+                            sessionStorage.setItem('veiculoDetalhe', JSON.stringify(v));
+                            location.href = 'detalhe.html';
+                        }
+                    });
+                });
             }
         }
 
@@ -323,8 +401,16 @@
         function aplicarFiltros() {
             const marca = document.getElementById('filtro-marca')?.value?.toLowerCase();
             const modelo = document.getElementById('filtro-modelo')?.value?.toLowerCase();
+            const busca = (document.getElementById('busca-marca-modelo-placa')?.value || '').trim().toLowerCase();
             let lista = [...veiculos];
 
+            if (busca) {
+                lista = lista.filter(v =>
+                    (v.marca && v.marca.toLowerCase().includes(busca)) ||
+                    (v.modelo && v.modelo.toLowerCase().includes(busca)) ||
+                    (v.placa && v.placa.toUpperCase().replace(/\s/g, '').includes(busca.toUpperCase().replace(/\s/g, '')))
+                );
+            }
             if (cidadesSelecionadas.length > 0) {
                 const nomesCidades = cidadesSelecionadas.map(c => c.nome.toUpperCase());
                 lista = lista.filter(v => nomesCidades.includes(v.cidade.toUpperCase()));
@@ -338,20 +424,24 @@
             renderizarCarros(lista);
         }
 
+        document.getElementById('busca-marca-modelo-placa')?.addEventListener('input', aplicarFiltros);
+        document.getElementById('busca-marca-modelo-placa')?.addEventListener('keyup', (e) => { if (e.key === 'Enter') aplicarFiltros(); });
         document.getElementById('busca-cidade')?.addEventListener('input', atualizarListaCidades);
         document.getElementById('busca-cidade')?.addEventListener('focus', () => { atualizarListaCidades(); });
         document.getElementById('limpar-filtros')?.addEventListener('click', (e) => {
             e.preventDefault();
             cidadesSelecionadas = [];
             const buscaCidade = document.getElementById('busca-cidade');
+            const buscaPrincipal = document.getElementById('busca-marca-modelo-placa');
             if (buscaCidade) buscaCidade.value = '';
+            if (buscaPrincipal) buscaPrincipal.value = '';
             atualizarCidadesSelecionadas();
             atualizarListaCidades();
 
             const sm = document.getElementById('filtro-marca');
             const smod = document.getElementById('filtro-modelo');
             if (sm) sm.value = '';
-            if (smod) { smod.value = ''; smod.innerHTML = '<option value="">Selecione o modelo</option>'; }
+            if (smod) smod.innerHTML = '<option value="">Selecione o modelo</option>';
 
             const km = document.getElementById('filtro-km');
             const ano = document.getElementById('filtro-ano');
@@ -375,18 +465,21 @@
             if (diesel) diesel.checked = false;
             if (etanol) etanol.checked = false;
 
-            aplicarFiltros();
+            carregarDaApi();
         });
 
         const selMarca = document.getElementById('filtro-marca');
         const selModelo = document.getElementById('filtro-modelo');
         if (selMarca) {
-            marcas.forEach(m => { selMarca.innerHTML += `<option value="${m.nome}">${m.nome}</option>`; });
+            selMarca.innerHTML = '<option value="">Selecione a marca</option>';
+            marcas.forEach(m => { selMarca.innerHTML += `<option value="${m.nome}" data-id="${m.id || ''}">${m.nome}</option>`; });
             selMarca.addEventListener('change', function() {
-                const m = marcas.find(x => x.nome === this.value);
+                const val = this.value;
+                const m = marcas.find(x => x.nome === val);
                 selModelo.innerHTML = '<option value="">Selecione o modelo</option>';
                 if (m) m.modelos.forEach(mod => { selModelo.innerHTML += `<option value="${mod}">${mod}</option>`; });
-                aplicarFiltros();
+                const marcaId = m && m.id ? m.id : null;
+                carregarDaApi(marcaId);
             });
         }
         if (selModelo) selModelo.addEventListener('change', aplicarFiltros);
@@ -406,6 +499,8 @@
             });
         });
         }
+
+        carregarDaApi();
     </script>
 </body>
 </html>

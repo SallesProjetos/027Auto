@@ -42,7 +42,7 @@ function converter(v, i) {
     cidade: store.city || 'Serra',
     estado: store.state || 'ES',
     label: v.category || '',
-    descricao: 'Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.',
+    descricao: 'Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.',
     itens: []
   };
 }

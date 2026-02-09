@@ -547,6 +547,45 @@ body {
     color: var(--texto-claro);
 }
 
+.busca-principal {
+    display: flex;
+    align-items: center;
+    max-width: 480px;
+    margin-bottom: 24px;
+    background: var(--fundo-cards);
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.busca-principal:focus-within {
+    border-color: var(--gradiente-inicio);
+    box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+}
+
+.busca-icone {
+    padding: 14px 16px;
+    color: var(--texto-cinza);
+    font-size: 1.1rem;
+}
+
+.busca-input {
+    flex: 1;
+    padding: 14px 16px 14px 0;
+    border: none;
+    background: transparent;
+    color: var(--texto-claro);
+    font-size: 1rem;
+}
+
+.busca-input::placeholder {
+    color: var(--texto-cinza);
+}
+
+.busca-input:focus {
+    outline: none;
+}
+
 .catalogo-layout {
     display: grid;
     grid-template-columns: 280px 1fr;

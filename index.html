@@ -40,7 +40,7 @@
             <div class="hero-bg"></div>
             <div class="container hero-content">
                 <h1>Seu carro seminovo está aqui</h1>
-                <p>Seminovos Localiza com laudo cautelar e preços abaixo da FIPE. Encontre em minutos.</p>
+                <p>Seminovos 027Auto no Espírito Santo. Laudo cautelar e preços abaixo da FIPE.</p>
                 <div class="hero-buttons">
                     <a href="carros.html" class="btn btn-primary">Ver catálogo</a>
                     <a href="#contato" class="btn btn-secondary">Contato</a>
@@ -105,18 +105,37 @@
         </div>
     </footer>
     <a href="https://wa.me/5527998880682" target="_blank" rel="noopener" class="floating-whatsapp" title="Fale conosco">💬</a>
-    <script src="dados.js"></script>
     <script>
-        const destaque = document.getElementById('destaques-grid');
-        const veiculos = DADOS_027AUTO.veiculos.slice(0, 3);
-        destaque.innerHTML = veiculos.map(v => `
-            <a href="detalhe.html?id=${v.id}" class="carro-card">
-                <div class="carro-imagem"><img src="${v.imagem}" alt="${v.marca} ${v.modelo}" loading="lazy"></div>
-                <span class="carro-label">${v.label || ''}</span>
-                <h3>${v.marca} ${v.modelo}</h3>
-                <p class="carro-preco">${v.preco && v.preco > 0 ? 'R$ ' + v.preco.toLocaleString('pt-BR') : 'Consulte-nos'}</p>
-            </a>
-        `).join('');
+        function mapApi(v) {
+            const s = v.store || {};
+            return {
+                id: v.id, slug: v.slug, placa: (v.plate||'').toUpperCase(), brandId: v.brandId,
+                marca: (v.brand||'').toUpperCase(), modelo: v.modelFamilyDescription||v.model||'', versao: v.model||'',
+                anoFab: v.manufactureYear||v.modelYear, anoMod: v.modelYear, km: v.odometer||0,
+                preco: v.priceFor||v.priceFrom||0, imagem: v.photoUrl||'',
+                cidade: (s.city||'').toUpperCase(), estado: s.state||'', label: v.category||'',
+                cambio: (v.transmission||'').toLowerCase().includes('automatico')?'Automático':'Mecânico',
+                combustivel: v.fuel||'', cor: v.colorFamily||v.color||''
+            };
+        }
+        fetch('/api/veiculos?pagina=1').then(r => r.json()).then(data => {
+            const raw = (data.vehicles || []).slice(0, 3);
+            const veiculos = raw.map(mapApi);
+            const grid = document.getElementById('destaques-grid');
+            grid.innerHTML = veiculos.map(v => {
+                const preco = (v.preco && v.preco > 0) ? 'R$ ' + v.preco.toLocaleString('pt-BR') : 'Consulte-nos';
+                return `<a href="detalhe.html" class="carro-card" data-id="${v.id}"><div class="carro-imagem"><img src="${v.imagem}" alt="${v.marca} ${v.modelo}" loading="lazy"></div><span class="carro-label">${v.label}</span><h3>${v.marca} ${v.modelo}</h3><p class="carro-preco">${preco}</p></a>`;
+            }).join('');
+            grid.querySelectorAll('.carro-card').forEach(card => {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const v = veiculos.find(x => x.id === parseInt(card.dataset.id));
+                    if (v) { sessionStorage.setItem('veiculoDetalhe', JSON.stringify(v)); location.href = 'detalhe.html'; }
+                });
+            });
+        }).catch(() => {
+            document.getElementById('destaques-grid').innerHTML = '<p style="color:#a0a0b0;text-align:center;">Carregue a página com o servidor rodando para ver os destaques.</p>';
+        });
     </script>
 </body>
 </html>

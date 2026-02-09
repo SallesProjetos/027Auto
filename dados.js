@@ -1,6 +1,5 @@
 /**
- * 027AUTO - Dados mockados baseados no Portal do Lojista Localiza (Serra - ES)
- * Estrutura inspirada em: https://portaldolojista.localiza.com/carros?cidades=874
+ * 027AUTO - Dados mockados (Serra - ES)
  */
 
 const DADOS_027AUTO = {
@@ -11,7 +10,7 @@ const DADOS_027AUTO = {
     codigo: 874
   },
 
-  // Cidades disponíveis para filtro (inspirado em https://portaldolojista.localiza.com/carros)
+  // Cidades disponíveis para filtro
   // Digite na busca para filtrar (ex: "es" mostra cidades do ES)
   cidades: [
     { id: 874, nome: "Serra", estado: "ES" },
@@ -101,7 +100,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -124,7 +123,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -147,7 +146,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -170,7 +169,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -193,7 +192,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -216,7 +215,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -239,7 +238,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -262,7 +261,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -285,7 +284,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -308,7 +307,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -331,7 +330,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -354,7 +353,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -377,7 +376,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -400,7 +399,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -423,7 +422,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -446,7 +445,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -469,7 +468,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -492,7 +491,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -515,7 +514,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -538,7 +537,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -561,7 +560,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -584,7 +583,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -607,7 +606,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -630,7 +629,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -653,7 +652,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -676,7 +675,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -699,7 +698,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -722,7 +721,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -745,7 +744,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -768,7 +767,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -791,7 +790,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -814,7 +813,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -837,7 +836,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -860,7 +859,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -883,7 +882,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -906,7 +905,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -929,7 +928,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "FURGAO",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -952,7 +951,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -975,7 +974,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SEDAN",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -998,7 +997,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1021,7 +1020,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1044,7 +1043,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1067,7 +1066,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1090,7 +1089,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "FURGAO",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1113,7 +1112,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1136,7 +1135,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1159,7 +1158,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1182,7 +1181,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1205,7 +1204,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1228,7 +1227,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SEDAN",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1251,7 +1250,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1274,7 +1273,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1297,7 +1296,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1320,7 +1319,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1343,7 +1342,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1366,7 +1365,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1389,7 +1388,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1412,7 +1411,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1435,7 +1434,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1458,7 +1457,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1481,7 +1480,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1504,7 +1503,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SEDAN",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1527,7 +1526,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1550,7 +1549,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1573,7 +1572,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1596,7 +1595,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1619,7 +1618,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1642,7 +1641,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SEDAN",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1665,7 +1664,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1688,7 +1687,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1711,7 +1710,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "PICK-UP",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1734,7 +1733,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1757,7 +1756,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1780,7 +1779,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SEDAN",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1803,7 +1802,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1826,7 +1825,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1849,7 +1848,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1872,7 +1871,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1895,7 +1894,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1918,7 +1917,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1941,7 +1940,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "MINIVAN",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1964,7 +1963,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -1987,7 +1986,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -2010,7 +2009,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "FURGAO",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -2033,7 +2032,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -2056,7 +2055,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -2079,7 +2078,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SUV",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -2102,7 +2101,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -2125,7 +2124,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "SEDAN",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -2148,7 +2147,7 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
     },
     {
@@ -2171,383 +2170,8 @@ const DADOS_027AUTO = {
         "cidade": "SERRA",
         "estado": "ES",
         "label": "HATCH",
-        "descricao": "Veículo seminovo Localiza. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
+        "descricao": "Veículo seminovo 027Auto. Laudo cautelar e quilometragem real. Entre em contato para mais informações.",
         "itens": []
-    }
-]
-      cidade: "Serra",
-      estado: "ES",
-      label: "Picape",
-      descricao: "Veículo em excelente estado. Único dono. Revisões em dia. Documentação completa. Laudo cautelar e quilometragem real.",
-      itens: ["Ar-condicionado", "Direção hidráulica", "Vidros elétricos", "Trava elétrica", "Air bags", "ABS"]
-    },
-    {
-      id: 2,
-      marca: "Renault",
-      modelo: "Kwid",
-      versao: "Zen 1.0 Flex 12V Manual",
-      anoFab: 2023,
-      anoMod: 2024,
-      km: 12500,
-      preco: 56890,
-      cor: "Vermelho",
-      combustivel: "Flex",
-      cambio: "Mecânico",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "Econômico",
-      descricao: "Carro econômico ideal para cidade. Baixo consumo. Laudo cautelar e quilometragem real.",
-      itens: ["Ar-condicionado", "Direção elétrica", "Vidros elétricos", "USB", "Central multimídia"]
-    },
-    {
-      id: 3,
-      marca: "Fiat",
-      modelo: "Mobi",
-      versao: "Like 1.0 Flex Manual",
-      anoFab: 2023,
-      anoMod: 2023,
-      km: 18500,
-      preco: 52900,
-      cor: "Prata",
-      combustivel: "Flex",
-      cambio: "Mecânico",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-        "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "Entrada",
-      descricao: "Hatch compacto. Procedência garantida. Preço abaixo da FIPE.",
-      itens: ["Ar-condicionado", "Direção elétrica", "Vidros elétricos"]
-    },
-    {
-      id: 4,
-      marca: "Volkswagen",
-      modelo: "Polo",
-      versao: "Comfort 200 TSI Flex Automático",
-      anoFab: 2023,
-      anoMod: 2024,
-      km: 22000,
-      preco: 99990,
-      cor: "Azul",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "Sedan",
-      descricao: "Sedan premium alemão. Motor TSI turbo. Documentação completa.",
-      itens: ["Ar-condicionado digital", "CarPlay/Android Auto", "Câmera de ré", "Sensor de estacionamento"]
-    },
-    {
-      id: 5,
-      marca: "Fiat",
-      modelo: "Strada",
-      versao: "Volcyear 1.3 Flex Manual",
-      anoFab: 2023,
-      anoMod: 2024,
-      km: 15200,
-      preco: 78900,
-      cor: "Preto",
-      combustivel: "Flex",
-      cambio: "Mecânico",
-      motor: "1.3",
-      imagem: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
-        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "Picape",
-      descricao: "Picape versátil. Laudo cautelar. Quilometragem real.",
-      itens: ["Ar-condicionado", "Direção elétrica", "Central multimídia", "USB"]
-    },
-    {
-      id: 6,
-      marca: "Fiat",
-      modelo: "Argo",
-      versao: "Drive 1.0 Flex",
-      anoFab: 2023,
-      anoMod: 2023,
-      km: 15000,
-      preco: 58900,
-      cor: "Branco",
-      combustivel: "Flex",
-      cambio: "Mecânico",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
-        "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "Hatch mais vendido",
-      descricao: "Veículo em excelente estado. Único dono. Revisões em dia. Laudo cautelar e quilometragem real.",
-      itens: ["Ar-condicionado", "Direção hidráulica", "Vidros elétricos", "Trava elétrica", "Air bags", "ABS", "Bluetooth"]
-    },
-    {
-      id: 7,
-      marca: "Jeep",
-      modelo: "Renegade",
-      versao: "Sport 1.8 Flex 4x2",
-      anoFab: 2022,
-      anoMod: 2023,
-      km: 28000,
-      preco: 98500,
-      cor: "Preto",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.8",
-      imagem: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "SUV mais vendido",
-      descricao: "SUV seminovo com procedência garantida. Laudo cautelar, quilometragem real e preço abaixo da FIPE.",
-      itens: ["Ar-condicionado digital", "Central multimídia", "Piloto automático", "Faróis LED", "Controle de cruzeiro"]
-    },
-    {
-      id: 8,
-      marca: "Chevrolet",
-      modelo: "Onix Plus",
-      versao: "Premier 1.0 Turbo Flex",
-      anoFab: 2023,
-      anoMod: 2023,
-      km: 12000,
-      preco: 62400,
-      cor: "Prata",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "Popular",
-      descricao: "Sedan compacto com melhor custo-benefício. Motor turbo. Revisões na concessionária.",
-      itens: ["Ar-condicionado", "MyLink", "Apple CarPlay", "Câmera de ré", "Sensor de estacionamento"]
-    },
-    {
-      id: 9,
-      marca: "Volkswagen",
-      modelo: "T-Cross",
-      versao: "Highline 1.0 TSI",
-      anoFab: 2023,
-      anoMod: 2024,
-      km: 20000,
-      preco: 118290,
-      cor: "Azul",
-      combustivel: "Gasolina",
-      cambio: "Automático",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "SUV Compacto",
-      descricao: "SUV compacto alemão. Motor 1.0 TSI turbo. Único dono, laudo cautelar.",
-      itens: ["Painel digital", "Ar-condicionado digital", "CarPlay/Android Auto", "Faróis full LED"]
-    },
-    {
-      id: 10,
-      marca: "Fiat",
-      modelo: "Cronos",
-      versao: "Drive 1.3 Flex",
-      anoFab: 2023,
-      anoMod: 2023,
-      km: 18500,
-      preco: 75490,
-      cor: "Cinza",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.3",
-      imagem: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
-        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "Sedan",
-      descricao: "Sedan econômico com porta-malas generoso. Laudo cautelar.",
-      itens: ["Ar-condicionado", "Central multimídia", "USB", "Vidros elétricos"]
-    },
-    {
-      id: 11,
-      marca: "Chevrolet",
-      modelo: "Tracker",
-      versao: "Premier 1.2 Turbo Flex",
-      anoFab: 2023,
-      anoMod: 2024,
-      km: 18000,
-      preco: 108290,
-      cor: "Branco",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.2",
-      imagem: "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
-        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "SUV Compacto",
-      descricao: "SUV compacto com tecnologia. Motor turbo 1.2. Quilometragem real e laudo cautelar.",
-      itens: ["Ar-condicionado digital", "MyLink com CarPlay", "Câmera 360°", "Cruze control adaptativo"]
-    },
-    {
-      id: 12,
-      marca: "Volkswagen",
-      modelo: "Nivus",
-      versao: "Highline 200 TSI Flex",
-      anoFab: 2023,
-      anoMod: 2024,
-      km: 9500,
-      preco: 117990,
-      cor: "Vermelho",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-        "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80"
-      ],
-      cidade: "Serra",
-      estado: "ES",
-      label: "SUV",
-      descricao: "SUV-crossover com design arrojado. Motor TSI. Procedência garantida.",
-      itens: ["Painel digital", "Ar-condicionado digital", "CarPlay", "Faróis LED"]
-    },
-    {
-      id: 13,
-      marca: "Fiat",
-      modelo: "Argo",
-      versao: "Drive 1.0 Flex",
-      anoFab: 2024,
-      anoMod: 2025,
-      km: 2227,
-      preco: 69900,
-      cor: "Preto",
-      combustivel: "Flex",
-      cambio: "Mecânico",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-        "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80"
-      ],
-      cidade: "Goiânia",
-      estado: "GO",
-      label: "Hatch",
-      descricao: "Veículo novo, quase zero km. Procedência Localiza.",
-      itens: ["Ar-condicionado", "Direção elétrica", "Bluetooth", "Air bags"]
-    },
-    {
-      id: 14,
-      marca: "Hyundai",
-      modelo: "HB20",
-      versao: "Evolution 1.0 Flex",
-      anoFab: 2023,
-      anoMod: 2024,
-      km: 18000,
-      preco: 72900,
-      cor: "Prata",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80"
-      ],
-      cidade: "Vitória",
-      estado: "ES",
-      label: "Hatch",
-      descricao: "Hatch popular. Laudo cautelar. Documentação em dia.",
-      itens: ["Ar-condicionado", "Central multimídia", "CarPlay", "Câmera de ré"]
-    },
-    {
-      id: 15,
-      marca: "Volkswagen",
-      modelo: "Polo",
-      versao: "Comfort 200 TSI Flex",
-      anoFab: 2023,
-      anoMod: 2023,
-      km: 25000,
-      preco: 94900,
-      cor: "Branco",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80"
-      ],
-      cidade: "Vila Velha",
-      estado: "ES",
-      label: "Sedan",
-      descricao: "Sedan alemão. Quilometragem real. Preço abaixo da FIPE.",
-      itens: ["Ar-condicionado", "CarPlay", "Sensor de estacionamento"]
-    },
-    {
-      id: 16,
-      marca: "Chevrolet",
-      modelo: "Onix",
-      versao: "Plus Premier 1.0 Turbo Flex",
-      anoFab: 2024,
-      anoMod: 2024,
-      km: 5000,
-      preco: 78900,
-      cor: "Azul",
-      combustivel: "Flex",
-      cambio: "Automático",
-      motor: "1.0",
-      imagem: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
-      imagens: [
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80"
-      ],
-      cidade: "São Paulo",
-      estado: "SP",
-      label: "Popular",
-      descricao: "Quase zero km. Único dono. Documentação completa.",
-      itens: ["Ar-condicionado digital", "MyLink", "CarPlay", "Câmera de ré"]
     }
   ],
 
