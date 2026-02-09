@@ -202,6 +202,7 @@
         </div>
     </footer>
     <a href="https://wa.me/5527998880682" target="_blank" rel="noopener" class="floating-whatsapp" title="Fale conosco">💬</a>
+    <script src="dados.js"></script>
     <script>
         const API_URL = '/api/veiculos';
 
@@ -264,7 +265,36 @@
                     iniciarFiltros();
                 })
                 .catch(() => {
-                    grid.innerHTML = '<p class="nenhum-resultado">Erro ao carregar. Execute <code>node servidor.js</code> e acesse <a href="http://localhost:8000/carros.html">http://localhost:8000/carros.html</a></p>';
+                    if (typeof DADOS_027AUTO !== 'undefined' && DADOS_027AUTO.veiculos) {
+                        const raw = DADOS_027AUTO.veiculos;
+                        let list = raw.map(v => ({
+                            id: v.id, slug: v.slug||'', brandId: v.brandId||null, placa: (v.placa||'').toUpperCase(),
+                            marca: (v.marca||'').toUpperCase(), modelo: v.modelo||'', versao: v.versao||'',
+                            anoFab: v.anoFab, anoMod: v.anoMod||v.anoFab, km: v.km||0, preco: v.preco||0,
+                            imagem: v.imagem||'', cidade: (v.cidade||'').toUpperCase(), estado: v.estado||'ES',
+                            label: v.label||'', cambio: v.cambio||'', combustivel: v.combustivel||'', cor: v.cor||''
+                        })).filter(v => (v.estado||'').toUpperCase() === 'ES');
+                        if (marcaId) {
+                            const entry = Object.entries(MARCAS_IDS).find(([, id]) => id === marcaId);
+                            if (entry) list = list.filter(v => v.marca === entry[0]);
+                        }
+                        veiculos = list;
+                        cidades = [...new Map(veiculos.filter(v => v.cidade && (v.estado||'').toUpperCase() === 'ES').map(v => [v.cidade, { id: v.cidade, nome: v.cidade, estado: 'ES' }])).values()].sort((a, b) => a.nome.localeCompare(b.nome));
+                        const marcasSet = {};
+                        veiculos.forEach(v => {
+                            if (!v.marca) return;
+                            if (!marcasSet[v.marca]) marcasSet[v.marca] = { id: v.brandId, modelos: new Set() };
+                            if (v.modelo) marcasSet[v.marca].modelos.add(v.modelo);
+                        });
+                        marcas = Object.entries(marcasSet).map(([nome, data]) => ({ nome, id: data.id, modelos: [...data.modelos].sort() }));
+                        Object.entries(MARCAS_IDS).forEach(([nome, id]) => {
+                            if (!marcas.find(m => m.nome === nome)) marcas.push({ nome, id, modelos: [] });
+                        });
+                        marcas.sort((a, b) => a.nome.localeCompare(b.nome));
+                        iniciarFiltros();
+                    } else {
+                        grid.innerHTML = '<p class="nenhum-resultado">Erro ao carregar. Em GitHub Pages, inclua <code>dados.js</code> no projeto.</p>';
+                    }
                 });
         }
 

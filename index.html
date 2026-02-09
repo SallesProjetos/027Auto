@@ -105,6 +105,7 @@
         </div>
     </footer>
     <a href="https://wa.me/5527998880682" target="_blank" rel="noopener" class="floating-whatsapp" title="Fale conosco">💬</a>
+    <script src="dados.js"></script>
     <script>
         function mapApi(v) {
             const s = v.store || {};
@@ -118,23 +119,40 @@
                 combustivel: v.fuel||'', cor: v.colorFamily||v.color||''
             };
         }
-        fetch('/api/veiculos?pagina=1').then(r => r.json()).then(data => {
-            const raw = (data.vehicles || []).slice(0, 3);
-            const veiculos = raw.map(mapApi);
+        function renderDestaques(veiculos) {
             const grid = document.getElementById('destaques-grid');
-            grid.innerHTML = veiculos.map(v => {
+            const list = (veiculos || []).slice(0, 3);
+            grid.innerHTML = list.map(v => {
                 const preco = (v.preco && v.preco > 0) ? 'R$ ' + v.preco.toLocaleString('pt-BR') : 'Consulte-nos';
-                return `<a href="detalhe.html" class="carro-card" data-id="${v.id}"><div class="carro-imagem"><img src="${v.imagem}" alt="${v.marca} ${v.modelo}" loading="lazy"></div><span class="carro-label">${v.label}</span><h3>${v.marca} ${v.modelo}</h3><p class="carro-preco">${preco}</p></a>`;
+                const img = v.imagem || v.photoUrl || '';
+                const marca = (v.marca || v.brand || '').toUpperCase();
+                const modelo = v.modelo || v.modelFamilyDescription || v.model || '';
+                const label = v.label || v.category || '';
+                return `<a href="detalhe.html" class="carro-card" data-id="${v.id}"><div class="carro-imagem"><img src="${img}" alt="${marca} ${modelo}" loading="lazy"></div><span class="carro-label">${label}</span><h3>${marca} ${modelo}</h3><p class="carro-preco">${preco}</p></a>`;
             }).join('');
             grid.querySelectorAll('.carro-card').forEach(card => {
                 card.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const v = veiculos.find(x => x.id === parseInt(card.dataset.id));
-                    if (v) { sessionStorage.setItem('veiculoDetalhe', JSON.stringify(v)); location.href = 'detalhe.html'; }
+                    const v = list.find(x => x.id === parseInt(card.dataset.id));
+                    if (v) {
+                        const obj = { id:v.id, slug:v.slug, marca:(v.marca||v.brand||'').toUpperCase(), modelo:v.modelo||v.model, anoFab:v.anoFab||v.manufactureYear, anoMod:v.anoMod||v.modelYear, km:v.km||v.odometer||0, preco:v.preco||v.priceFor||0, imagem:v.imagem||v.photoUrl||'', cidade:(v.cidade||(v.store&&v.store.city)||'').toUpperCase(), estado:v.estado||(v.store&&v.store.state)||'ES', label:v.label||v.category||'', cambio:v.cambio, combustivel:v.combustivel||v.fuel||'', cor:v.cor||v.colorFamily||'' };
+                        sessionStorage.setItem('veiculoDetalhe', JSON.stringify(obj));
+                        location.href = 'detalhe.html';
+                    }
                 });
             });
+        }
+        fetch('/api/veiculos?pagina=1').then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(data => {
+            const raw = (data.vehicles || []).slice(0, 3);
+            const veiculos = raw.map(mapApi).filter(v => (v.estado||'').toUpperCase() === 'ES');
+            renderDestaques(veiculos);
         }).catch(() => {
-            document.getElementById('destaques-grid').innerHTML = '<p style="color:#a0a0b0;text-align:center;">Carregue a página com o servidor rodando para ver os destaques.</p>';
+            if (typeof DADOS_027AUTO !== 'undefined' && DADOS_027AUTO.veiculos) {
+                const list = DADOS_027AUTO.veiculos.filter(v => (v.estado||'ES').toUpperCase() === 'ES');
+                renderDestaques(list);
+            } else {
+                document.getElementById('destaques-grid').innerHTML = '<p style="color:#a0a0b0;text-align:center;">Carregue a página com o servidor rodando ou inclua dados.js.</p>';
+            }
         });
     </script>
 </body>
